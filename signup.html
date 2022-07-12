@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+    <script>
+        function validator() {
+            var name = document.forms["myform"]["name"].value;
+            var email = document.forms["myform"]["email"].value;
+            var password = document.forms["myform"]["password"].value;
+            var name_error = document.getElementById("name_error");
+            var email_error = document.getElementById("email_error");
+            var password_error = document.getElementById("password_error");
+
+            if (name == "" && email == "" && password == "") {
+                name_error.style.visibility = "visible";
+                email_error.style.visibility = "visible";
+                password_error.style.visibility = "visible";
+                return false;
+            }
+            else if (name == "") {
+                name_error.style.visibility = "visible";
+                return false;
+            }
+            else if (email == "") {
+                email_error.style.visibility = "visible";
+                return false;
+            }
+            else if (password == "") {
+                password_error.style.visibility = "visible";
+                return false;
+            }
+            else {
+                alert("Your form is submitted successfully");
+                return true;
+            }
+        }
+        function showname(){
+            var a = document.getElementById("pswrd");
+            var b = document.getElementById("cpswrd");
+            if(a.type ==="password" && b.type ==="password"){
+                a.type= "text";
+                b.type= "text";
+            }
+            else{
+                a.type = "password";
+                b.type = "password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="logo">
+                <img class="image1" src="/home/tamanna/Downloads/pic.jpg" width=100px;>
+            </div>
+
+            <div class="heading">Create your Google Account</div>
+            <div class="right-div">
+                <img class="image2" src="/home/tamanna/Pictures/google.jpeg" width="300px" ;>
+                <p>One account.All of Google working for you</p>
+            </div>
+            <form name="myform" onsubmit=" return validator()">
+                <div>
+                    <input type="text" placeholder="First Name" class="name" name="name">
+                    <input type="text" placeholder="Last  Name" class="name" name="name">
+                    <span>
+                        <div id="name_error">Enter first name and last name </div>
+                    </span>
+                </div>
+
+                <div class="email">
+                    <input type="text" placeholder=" Username" class="user" name="email">
+
+                    <span class="gmail">@gmail.com </span>
+                    <span>
+                        <div id="email_error">Use my current email address instead</div>
+                    </span>
+                </div>
+
+                <div class="lines">
+                    <p>You can use letters,numbers & periods</p>
+                </div>
+
+
+
+                <div>
+                    <input type="password" placeholder="Password" class="pass" id="pswrd" >
+                    <input type="password" placeholder="Confirm" class="pass" id="cpswrd" >
+                    <span>
+                        <div id="password_error">Use 8 or more characters with a mix of letters,numbers & symbols</div>
+                    </span>
+                </div>
+                <div class="pass2">
+                    <input type="checkbox"  class="check" onclick = "showname()">
+                    <span>Show Password</span>
+                </div>
+
+                <div class="signin-instead">
+                    <span>
+                        <a id="a2" href="googlesignin.html">Sign in instead</a>
+                    </span>
+                    <input type="submit" value="Next" class="submit" />
+
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <footer>
+        <ul class="field1">
+            <li><a href="#">English(United States)</a></li>
+        </ul>
+        <ul class="field2">
+            <li class="line"><a href="#">Help</a></li>
+            <li class="line"><a href="#">Privacy</a></li>
+            <li class="line"><a href="#">Terms</a></li>
+        </ul>
+
+
+
+    </footer>
+
+</body>
+
+</div>
+</div>
+</body>
+
+</html>
